@@ -1,7 +1,6 @@
 package com.sample.microservice.awsdynamodb.configuration;
 
 
-import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
 import com.amazonaws.auth.BasicAWSCredentials;
@@ -24,12 +23,7 @@ public class DynamoDbConfig {
 
 
     public AWSCredentialsProvider amazonAWSCredentialsProvider() {
-        return new AWSStaticCredentialsProvider(amazonAWSCredentials());
-    }
-
-    @Bean
-    public AWSCredentials amazonAWSCredentials() {
-        return new BasicAWSCredentials(config.getAccessKey(), config.getSecretKey());
+        return new AWSStaticCredentialsProvider(new BasicAWSCredentials(config.getAccessKey(), config.getSecretKey()));
     }
 
     @Bean
@@ -48,6 +42,4 @@ public class DynamoDbConfig {
                 .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration(config.getEndpoint(), config.getRegion()))
                 .build();
     }
-
-
 }
