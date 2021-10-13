@@ -1,0 +1,9 @@
+# AWS properties
+aws:
+  access-key: <YOUR ACCESS KEY>
+  secret-key: <SECRET ACCESS KEY>
+  region: us-east-2
+  endpoint: dynamodb.us-east-2.amazonaws.com
+
+server:
+  port: 8081
