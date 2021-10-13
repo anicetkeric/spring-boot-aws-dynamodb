@@ -27,7 +27,7 @@ public interface EmployeeService {
      * @param employee entity
      * @return entity modified
      */
-    Employee update(Employee employee);
+    Employee update(Employee employee, String id);
 
 
     /**
@@ -45,12 +45,6 @@ public interface EmployeeService {
      */
     List<Employee> getAll();
 
-    /**
-     * Get all paginate data for entity
-     *
-     * @param pageable pageable param
-     * @return Page of entity Employee
-     */
-    Page<Employee> findAllPaginate(Pageable pageable);
+    void delete(String id);
 
 }
